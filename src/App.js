@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
-import ExercisesList from './components/exerciseslist'
-import EditExercise from './components/editexercise'
-import CreateExercise from './components/createexercise'
-import CreateUser from './components/createusers'
+import ExercisesList from './components/Exerciseslist'
+import EditExercise from './components/Editexercise'
+import CreateExercise from './components/Createexercise'
+import CreateUser from './components/Createusers'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App () {

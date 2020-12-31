@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function editexercise () {
+function Editexercise () {
   return (
     <div className='container'>
             edit exercise
@@ -9,4 +9,4 @@ function editexercise () {
   )
 }
 
-export default editexercise
+export default Editexercise

@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function createusers () {
+function Createusers () {
   return (
     <div className='container'>
             make user
@@ -9,4 +9,4 @@ function createusers () {
   )
 }
 
-export default createusers
+export default Createusers

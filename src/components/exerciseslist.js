@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function exerciseslist () {
+function Exerciseslist () {
   return (
     <div className='container'>
             Exercise List
@@ -9,4 +9,4 @@ function exerciseslist () {
   )
 }
 
-export default exerciseslist
+export default Exerciseslist
