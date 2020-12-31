@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -7,28 +7,61 @@ function Createexercise () {
   const [username, setUsername] = useState('')
   const [description, setDescription] = useState('')
   const [duration, setDuration] = useState(0)
-  const [date, setDate] = useState(new Date())
+  const [startDate, setStartDate] = useState(new Date())
   const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    // Your code here
+    setUsers('Test user')
+  }, [])
+
+  function descript (e) {
+    const d = e.target.value
+    setDescription(d)
+  }
+
+  function userN (e) {
+    const uN = e.target.value
+    setUsername(uN)
+  }
+
+  function dura (e) {
+    const dura = e.target.value
+    setDuration(dura)
+  }
+
+  function handleSubmit (e) {
+    e.preventDefault()
+
+    const exercise = {
+      username: username,
+      description: description,
+      duration: duration,
+      date: startDate
+    }
+    console.log(exercise)
+    // window.location = '/'
+  }
 
   return (
     <div className='container'>
       <h3>Create New Exercise Log</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className='form-group'>
           <label>Username: </label>
-          <select required className='form-control' />
+          <select required className='form-control' onChange={userN}  />
         </div>
         <div className='form-group'>
           <label>Description: </label>
-          <input type='text' required className='form-control' />
+          <input type='text' required className='form-control' onChange={descript} />
         </div>
         <div className='form-group'>
           <label>Duration (in minutes): </label>
-          <input />
+          <input onChange={dura} />
         </div>
         <div className='form-group'>
           <label>Date: </label>
-          <DatePicker />
+          <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
         </div>
 
         <div className='form-group'>
