@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -8,12 +9,24 @@ function Createexercise () {
   const [description, setDescription] = useState('')
   const [duration, setDuration] = useState(0)
   const [startDate, setStartDate] = useState(new Date())
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState({
+    users: [],
+    username: ''
+  })
 
   useEffect(() => {
-    // Your code here
-    setUsers('Test user')
-  }, [])
+    const fetchUsers = async () => {
+      const res = await axios.get('http://localhost:5000/users/')
+      const users = res.data
+      if (users.length > 0) {
+        setUsers({
+          users: res.data.map((user) => user.username),
+          username: res.data[0].username
+        })
+      }
+    }
+    fetchUsers()
+  }, [users])
 
   function descript (e) {
     const d = e.target.value
@@ -39,7 +52,13 @@ function Createexercise () {
       duration: duration,
       date: startDate
     }
-    console.log(exercise)
+
+    const postUrl = async () => {
+      const res = await axios.post('http://localhost:5000/exercises/add', exercise)
+      const data = res.data
+      console.log(data)
+    }
+    postUrl()
     // window.location = '/'
   }
 
@@ -49,7 +68,13 @@ function Createexercise () {
       <form onSubmit={handleSubmit}>
         <div className='form-group'>
           <label>Username: </label>
-          <select required className='form-control' onChange={userN}  />
+          <select required className='form-control' onChange={userN} value={username}>
+            {Object.keys(users).map((user) => {
+              return (
+                <option key={user} value={user}>{[user]}</option>
+              )
+            })}
+          </select>
         </div>
         <div className='form-group'>
           <label>Description: </label>
@@ -57,7 +82,7 @@ function Createexercise () {
         </div>
         <div className='form-group'>
           <label>Duration (in minutes): </label>
-          <input onChange={dura} />
+          <input type='number' onChange={dura} value={duration} />
         </div>
         <div className='form-group'>
           <label>Date: </label>

@@ -1,10 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Createusers () {
+  const [user, setUser] = useState({ username: '' })
+  console.log(user)
+
+  function addUser (e) {
+    e.preventDefault()
+
+    const postUrl = async () => {
+      const res = await axios.post('http://localhost:5000/users/add', user)
+      const data = res.data
+      console.log(data)
+    }
+    postUrl()
+  }
+
   return (
     <div className='container'>
-            make user
+      <h3>Create New User</h3>
+      <form>
+        <div className='form-group'>
+          <label>Username: </label>
+          <input
+            type='text'
+            required
+            className='form-control'
+
+            onChange={(e) => setUser({ username: e.target.value })}
+          />
+        </div>
+        <div className='form-group'>
+          <input type='submit' value='Create User' className='btn btn-primary' onClick={addUser} />
+        </div>
+      </form>
     </div>
   )
 }
