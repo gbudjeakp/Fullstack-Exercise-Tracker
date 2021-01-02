@@ -9,24 +9,20 @@ function Createexercise () {
   const [description, setDescription] = useState('')
   const [duration, setDuration] = useState(0)
   const [startDate, setStartDate] = useState(new Date())
-  const [users, setUsers] = useState({
-    users: [],
-    username: ''
-  })
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
     const fetchUsers = async () => {
       const res = await axios.get('http://localhost:5000/users/')
-      const users = res.data
-      if (users.length > 0) {
-        setUsers({
-          users: res.data.map((user) => user.username),
-          username: res.data[0].username
-        })
+      const userz = res.data
+      if (userz.length > 0) {
+        setUsers(userz.map((usei) => usei.username))
+      } else {
+        window.location = '/user'
       }
     }
     fetchUsers()
-  }, [users])
+  }, [])
 
   function descript (e) {
     const d = e.target.value
@@ -59,7 +55,7 @@ function Createexercise () {
       console.log(data)
     }
     postUrl()
-    // window.location = '/'
+    window.location = '/'
   }
 
   return (
@@ -69,9 +65,9 @@ function Createexercise () {
         <div className='form-group'>
           <label>Username: </label>
           <select required className='form-control' onChange={userN} value={username}>
-            {Object.keys(users).map((user) => {
+            {users.map((user) => {
               return (
-                <option key={user} value={user}>{[user]}</option>
+                <option key={user} value={user}>{user}</option>
               )
             })}
           </select>

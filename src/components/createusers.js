@@ -12,9 +12,10 @@ function Createusers () {
     const postUrl = async () => {
       const res = await axios.post('http://localhost:5000/users/add', user)
       const data = res.data
-      console.log(data)
+      window.alert(data)
     }
     postUrl()
+    setUser('')
   }
 
   return (
