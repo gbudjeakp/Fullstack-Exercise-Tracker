@@ -16,11 +16,11 @@ function App () {
         <Navbar />
         <br />
 
-        <Route exact path='/home'>
+        <Route exact path='/'>
           <Home />
         </Route>
 
-        <Route exact path='/'>
+        <Route exact path='/exerciselist'>
           <ExercisesList />
         </Route>
 

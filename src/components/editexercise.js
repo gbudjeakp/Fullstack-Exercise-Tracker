@@ -48,7 +48,7 @@ function Editexercise ({ exercise }) {
       console.log(data)
     }
     postUrl()
-    window.location = '/'
+    window.location = '/exerciselist'
   }
   return (
     <div className='container'>

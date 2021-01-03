@@ -8,36 +8,36 @@ import home4 from '../assets/homephoto4.png'
 
 function Home () {
   return (
-    <div className='conatiner'>
+    <div className='container'>
       <section className='xop-section'>
         <div className='xop-wrapper'>
           <div className='xop-container'>
 
-            <a className='project' href='#'>
+            <a className='project' href='/user'>
               <figure>
                 <img src={home1} alt='work out ' />
                 <figcaption>
                   <div>
                     <h3>You a personal? Help track your clients work out plans</h3>
-                    <p className='cta'>Create Client</p>
+                    <p className='cta'>Add Client</p>
                   </div>
                 </figcaption>
               </figure>
             </a>
 
-            <a className='project' href='#'>
+            <a className='project' href='/exerciselist'>
               <figure>
                 <img src={home2} alt='work out' />
                 <figcaption>
                   <div>
-                    <h3>Manage Your Clients Exercises and Keep them on track</h3>
+                    <h3>Manage your clients exercises and Keep them on track</h3>
                     <p className='cta'>Exercise List</p>
                   </div>
                 </figcaption>
               </figure>
             </a>
 
-            <a className='project' href='#'>
+            <a className='project' href='/exerciselist'>
               <figure>
                 <img src={home3} alt='work out' />
                 <figcaption>
@@ -49,7 +49,7 @@ function Home () {
               </figure>
             </a>
 
-            <a className='project' href='#'>
+            <a className='project' href='/user'>
               <figure>
                 <img src={home4} alt='work out' />
                 <figcaption>
