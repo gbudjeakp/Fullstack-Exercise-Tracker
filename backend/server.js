@@ -11,9 +11,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 // Use this once everything has been tested to work
-// const uri = process.env.ATLAS_URI
+// const uri = process.env.MONGO_URL
 
-const uri = process.env.MONGO_URL
+const uri = 'mongodb://localhost:27017/test'
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 
 const connection = mongoose.connection

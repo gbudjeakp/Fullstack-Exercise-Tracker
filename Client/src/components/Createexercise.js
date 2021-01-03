@@ -13,7 +13,7 @@ function Createexercise () {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await axios.get('http://localhost5000/users')
+      const res = await axios.get('http://localhost:5000/users')
       const userz = res.data
       if (userz.length > 0) {
         setUsers(userz.map((usei) => usei.username))
