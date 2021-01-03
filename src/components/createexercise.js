@@ -55,7 +55,7 @@ function Createexercise () {
       console.log(data)
     }
     postUrl()
-    window.location = '/'
+    // window.location = '/'
   }
 
   return (

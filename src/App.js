@@ -5,6 +5,7 @@ import ExercisesList from './components/Exerciseslist'
 import EditExercise from './components/Editexercise'
 import CreateExercise from './components/Createexercise'
 import CreateUser from './components/Createusers'
+import Home from './components/Home'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App () {
@@ -14,6 +15,11 @@ function App () {
       <div>
         <Navbar />
         <br />
+
+        <Route exact path='/home'>
+          <Home />
+        </Route>
+
         <Route exact path='/'>
           <ExercisesList />
         </Route>

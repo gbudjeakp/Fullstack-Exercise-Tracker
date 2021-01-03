@@ -25,6 +25,7 @@ function Exerciseslist () {
     fetchExercises()
   }, [])
 
+ 
   const Exercise = ({ exercise, deleteExercise }) => (
     <tr style={{ color: 'white' }}>
       <td>{exercise.username}</td>
@@ -32,7 +33,7 @@ function Exerciseslist () {
       <td>{exercise.duration}</td>
       <td>{exercise.date.substring(0, 10)}</td>
       <td>
-        <Button variant='outline-warning' size='sm' component={Link} to={`/edit/${exercise._id}`}>Edit</Button>
+        <Link to={`/edit/${exercise._id}`}>edit</Link>
         <div style={{ paddingTop: '5px' }} />
         <Button onClick={() => { deleteExercise(exercise._id) }} variant='outline-warning' size='sm'>Delete</Button>
       </td>
