@@ -52,15 +52,15 @@ function Createexercise () {
     const postUrl = async () => {
       const res = await axios.post('http://localhost:5000/exercises/add', exercise)
       const data = res.data
-      console.log(data)
+      window.alert(data)
     }
     postUrl()
-    // window.location = '/'
+    window.location = '/exerciselist'
   }
 
   return (
     <div className='container'>
-      <h3>Create New Exercise Log</h3>
+      <h3>Create New Exercise</h3>
       <form onSubmit={handleSubmit}>
         <div className='form-group'>
           <label>Username: </label>

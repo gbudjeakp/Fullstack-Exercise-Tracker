@@ -30,7 +30,7 @@ function Home () {
                 <img src={home2} alt='work out' />
                 <figcaption>
                   <div>
-                    <h3>Manage your clients exercises and Keep them on track</h3>
+                    <h3>Manage your clients exercises</h3>
                     <p className='cta'>Exercise List</p>
                   </div>
                 </figcaption>
@@ -42,7 +42,7 @@ function Home () {
                 <img src={home3} alt='work out' />
                 <figcaption>
                   <div>
-                    <h3>Exercise too difficult, change and update the exercise settings</h3>
+                    <h3>Exercise too difficult, change and update it.</h3>
                     <p className='cta'>Edit the Exercise</p>
                   </div>
                 </figcaption>

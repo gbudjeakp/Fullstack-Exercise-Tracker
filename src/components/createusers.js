@@ -15,7 +15,7 @@ function Createusers () {
       window.alert(data)
     }
     postUrl()
-    setUser('')
+    window.location = '/create'
   }
 
   return (
