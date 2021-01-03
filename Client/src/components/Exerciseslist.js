@@ -9,7 +9,7 @@ function Exerciseslist () {
   const [exercises, setExercises] = useState([])
 
   const deleteFetch = async (id) => {
-    const res = await axios.delete(`http://localhost:5000/exercises/${id}`)
+    const res = await axios.delete(`https://cgainz-circuit.herokuapp.com/exercises/${id}`)
     const del = res.data
     setExercises(exercises.filter(el => el._id !== id))
     console.log(del)
@@ -17,7 +17,7 @@ function Exerciseslist () {
 
   useEffect(() => {
     const fetchExercises = async () => {
-      const res = await axios.get('http://localhost:5000/exercises/')
+      const res = await axios.get('https://cgainz-circuit.herokuapp.com/exercises/')
       const exerciseList = res.data
 
       setExercises(exerciseList)

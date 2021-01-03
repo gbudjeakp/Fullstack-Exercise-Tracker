@@ -14,13 +14,13 @@ function Editexercise ({ exercise }) {
 
   useEffect(() => {
     const editExer = async () => {
-      const res = await axios.get(`http://localhost:5000/exercises/${id}`)
+      const res = await axios.get(`https://cgainz-circuit.herokuapp.com/exercises/${id}`)
       const edit = res.data
       console.log(edit)
     }
 
     const fetchUsers = async () => {
-      const res = await axios.get('http://localhost:5000/users/')
+      const res = await axios.get('https://cgainz-circuit.herokuapp.com/users/')
       const userz = res.data
       if (userz.length > 0) {
         setUsers(userz.map((usei) => usei.username))
@@ -43,7 +43,7 @@ function Editexercise ({ exercise }) {
     }
 
     const postUrl = async () => {
-      const res = await axios.post(`http://localhost:5000/exercises/update/${id}`, exercise)
+      const res = await axios.post(`https://cgainz-circuit.herokuapp.com/exercises/update/${id}`, exercise)
       const data = res.data
       console.log(data)
     }

@@ -13,7 +13,7 @@ app.use(express.json())
 // Use this once everything has been tested to work
 // const uri = process.env.ATLAS_URI
 
-const uri = 'mongodb+srv://admin-baz:Gainztesti@gains-circuit.a17sv.mongodb.net/<dbname>?retryWrites=true&w=majority'
+const uri = process.env.MONGO_URL
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 
 const connection = mongoose.connection
