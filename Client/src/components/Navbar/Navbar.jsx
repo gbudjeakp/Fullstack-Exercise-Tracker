@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function Navbar () {
   return (
     <div>
-      <nav className='navbar navbar-dark  navbar-expand-lg fixed-top'>
+      <nav className='navbar navbar-dark  navbar-expand-lg'>
         <Link to='/' className='navbar-brand'><img src={logo} alt='logo' /></Link>
         <div className='collpase navbar-collapse'>
           <ul className='navbar-nav mr-auto'>
