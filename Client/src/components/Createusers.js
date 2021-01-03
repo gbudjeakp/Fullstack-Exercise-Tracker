@@ -9,7 +9,7 @@ function Createusers () {
     e.preventDefault()
 
     const postUrl = async () => {
-      const res = await axios.post(' https://gainz-circuit.herokuapp.com/users/add', user)
+      const res = await axios.post('https://gainzcircuit.herokuapp.com/users/add', user)
       const data = res.data
       window.alert(data)
     }
