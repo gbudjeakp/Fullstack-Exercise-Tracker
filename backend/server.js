@@ -13,7 +13,7 @@ app.use(express.json())
 // Use this once everything has been tested to work
 // const uri = process.env.ATLAS_URI
 
-const uri = 'mongodb://localhost:27017/test'
+const uri = process.env.ATLAS_URI
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 
 const connection = mongoose.connection
