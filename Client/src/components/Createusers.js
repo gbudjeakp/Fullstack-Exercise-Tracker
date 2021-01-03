@@ -4,13 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Createusers () {
   const [user, setUser] = useState({ username: '' })
-  console.log(user)
 
   function addUser (e) {
     e.preventDefault()
 
     const postUrl = async () => {
-      const res = await axios.post('https://gainz-circuit.herokuapp.com/users/add', user)
+      const res = await axios.post(' https://gainz-circuit.herokuapp.com/users/add', user)
       const data = res.data
       window.alert(data)
     }
