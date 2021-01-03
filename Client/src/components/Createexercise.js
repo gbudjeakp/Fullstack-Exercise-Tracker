@@ -13,7 +13,7 @@ function Createexercise () {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await axios.get('https://cgainz-circuit.herokuapp.com/users/')
+      const res = await axios.get('https://gainz-circuit.herokuapp.com/users/')
       const userz = res.data
       if (userz.length > 0) {
         setUsers(userz.map((usei) => usei.username))
@@ -50,7 +50,7 @@ function Createexercise () {
     }
 
     const postUrl = async () => {
-      const res = await axios.post('https://cgainz-circuit.herokuapp.com/exercises/add', exercise)
+      const res = await axios.post('https://gainz-circuit.herokuapp.com/exercises/add', exercise)
       const data = res.data
       window.alert(data)
     }
