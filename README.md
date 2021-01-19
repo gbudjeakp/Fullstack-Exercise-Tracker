@@ -1,6 +1,7 @@
 # Fullstack-Exercise-Tracker
 Saw a youtube tutorial https://youtu.be/7CqJlxBYj-M. I decided to rewrite the enitre code base,
 using only react hooks as opposed to class components styled react. 
+
 # Feel free to use the code
 If you're trying to understand react hooks, feel free to clone and use the code base anyway you see fit. 
 
@@ -22,16 +23,7 @@ replace the uri variable with your database uri and you are good to go.
 Cors has been added in the server.js file to enable resource sharing across servers  
 Server[[http://localhost:5000](http://localhost:5000)] to view server in browser
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Features ###
+The applications features a complete CRUD operation. 
+Users can be added and assigned exercises. Exrecises can also be edited/changed or deleted. 
+The application runs on a node express backend along with mongodb for storage.
