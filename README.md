@@ -10,3 +10,6 @@ If you're trying to understand react hooks, feel free to clone and use the code 
 <li>MongoDB</li>
 <li>Express</li>
 <li>BootStrap</li>
+
+#How it Looks and  Works
+![Exercise tracker](https://user-images.githubusercontent.com/61554248/113434148-0b65b080-93a6-11eb-8553-a3033cbe1f9b.gif)
