@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import DatePicker from 'react-datepicker'
+import api from "../api/API"
 import 'react-datepicker/dist/react-datepicker.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -13,7 +14,7 @@ function Createexercise () {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await axios.get('http://localhost:5000/users')
+      const res = await axios.get(`${api}/users`)
       const userz = res.data
       if (userz.length > 0) {
         setUsers(userz.map((usei) => usei.username))
@@ -50,7 +51,7 @@ function Createexercise () {
     }
 
     const postUrl = async () => {
-      const res = await axios.post('http://localhost:5000/exercises/add', exercise)
+      const res = await axios.post(`${api}/exercises/add`, exercise)
       const data = res.data
       window.alert(data)
     }

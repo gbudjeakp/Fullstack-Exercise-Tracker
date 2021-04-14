@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button'
-
+import api from "../api/API"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Exerciseslist () {
   const [exercises, setExercises] = useState([])
 
   const deleteFetch = async (id) => {
-    const res = await axios.delete(`http://localhost:5000/exercises/${id}`)
+    const res = await axios.delete(`${api}/exercises/${id}`)
     const del = res.data
     setExercises(exercises.filter(el => el._id !== id))
     console.log(del)
@@ -17,7 +17,7 @@ function Exerciseslist () {
 
   useEffect(() => {
     const fetchExercises = async () => {
-      const res = await axios.get('http://localhost:5000/exercises/')
+      const res = await axios.get(`${api}/exercises/`)
       const exerciseList = res.data
 
       setExercises(exerciseList)

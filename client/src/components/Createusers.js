@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import api from "../api/API"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Createusers () {
@@ -9,7 +10,7 @@ function Createusers () {
     e.preventDefault()
 
     const postUrl = async () => {
-      const res = await axios.post('http://localhost:5000/users/add', user)
+      const res = await axios.post(`${api}/users/add`, user)
       const data = res.data
       window.alert(data)
     }
