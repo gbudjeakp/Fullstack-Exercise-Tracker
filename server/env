@@ -1,0 +1,3 @@
+MONGO_URL=mongodb+srv://baz-admin:wannaseesomethingwild12345@cluster0.cix87.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+NODE_ENV=production
