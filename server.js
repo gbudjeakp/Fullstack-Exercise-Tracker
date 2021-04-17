@@ -32,7 +32,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCrea
 
 const connection = mongoose.connection
 connection.once('open', () => {
-  console.log('Mongo DB succesfully set up')
+  console.log('Mongo connection succesfully Established')
 })
 
 
